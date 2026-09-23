@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class main {
 
     static void main() {
-        RescueSystem rescueSystem = new RescueSystem();
-        int selectedChoice;
         Scanner scanner = new Scanner(System.in);
+        RescueSystem rescueSystem = new RescueSystem(scanner);
+        int selectedChoice;
 
 
         do {
@@ -23,6 +23,8 @@ public class main {
             System.out.println("Select an option:");
 
             selectedChoice = scanner.nextInt();
+            // nextInt() leaves the Enter key behind; clear it so RescueSystem's next read doesn't get an empty line
+            scanner.nextLine();
 
             switch(selectedChoice) {
                 case 1:

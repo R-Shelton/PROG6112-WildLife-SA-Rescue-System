@@ -54,13 +54,7 @@ public abstract class RescueCase implements RescueOperations {
     // Title banner followed by the details every rescue type shares.
     // rescueType is the display name of the type, e.g. "Injured Animal Rescue".
     protected String formatSummaryHeader(String rescueType) {
-        return String.format("%s%n %s - CASE #%d%n%s%n", SUMMARY_BORDER, rescueType.toUpperCase(), rescueID, SUMMARY_BORDER)
-                + formatLine("Animal Name", animalName)
-                + formatLine("Species", species)
-                + formatLine("Rescue Location", rescueLocation)
-                + formatLine("Assigned Ranger", assignedRanger)
-                + formatLine("Status", rescueStatus)
-                + formatLine("Priority", rescuePriority);
+        return String.format("%s%n %s - CASE #%d%n%s%n", SUMMARY_BORDER, rescueType.toUpperCase(), rescueID, SUMMARY_BORDER);
     }
 
     // Divider followed by the upper-cased section heading, e.g. "COST BREAKDOWN"

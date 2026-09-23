@@ -3,6 +3,11 @@ import java.util.Scanner;
 
 public class RescueSystem {
 
+    //TODO: Numeric input validation greater than 0;
+    //TODO: Add summary call to completeRescue() methods
+    //TODO: Junit tests
+    //TODO: test thoroughly
+
     private final ArrayList<RescueCase> rescueCases = new ArrayList<>();
     private final Scanner scanner;
 

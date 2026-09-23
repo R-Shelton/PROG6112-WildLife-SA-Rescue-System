@@ -4,8 +4,15 @@ public class OrphanedAnimalRescue extends RescueCase {
     private double feedingCost;
     private boolean fosterCareRequired;
 
-    public OrphanedAnimalRescue(int rescueID, String animalName, String species, String rescueLocation, String assignedRanger, int numberOfRescueDays, double dailyCareCost, String rescueStatus) {
-        super(rescueID, animalName, species, rescueLocation, assignedRanger, numberOfRescueDays, dailyCareCost, rescueStatus);
+    public OrphanedAnimalRescue(int rescueID, String animalName, String species, String rescueLocation, String assignedRanger,
+                                int numberOfRescueDays, double dailyCareCost, String rescueStatus, int estimatedAgeInMonths,
+                                double feedingCost, boolean fosterCareRequired) {
+
+        super(rescueID, animalName, species, rescueLocation, assignedRanger, numberOfRescueDays, dailyCareCost, rescueStatus, "Medium");
+
+        this.estimatedAgeInMonths = estimatedAgeInMonths;
+        this.feedingCost = feedingCost;
+        this.fosterCareRequired = fosterCareRequired;
     }
 
     @Override
@@ -41,5 +48,17 @@ public class OrphanedAnimalRescue extends RescueCase {
 
     public void setFosterCareRequired(boolean fosterCareRequired) {
         this.fosterCareRequired = fosterCareRequired;
+    }
+
+    @Override
+    public String toString() {
+        return    "Species: "         + this.species
+                + "Rescue Status: "   + this.rescueStatus
+                + "Rescue Priority: " + this.rescuePriority
+                + "Age in Months: "   + this.estimatedAgeInMonths
+                + "Feeding Cost: "    + this.feedingCost
+                + "Foster Care Required: " + this.fosterCareRequired
+                + "Total Cost: "      + getTotalCost()
+                ;
     }
 }

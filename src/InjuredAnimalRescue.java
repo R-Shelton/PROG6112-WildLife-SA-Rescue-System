@@ -4,8 +4,11 @@ public class InjuredAnimalRescue extends RescueCase {
     private String injuryDescription;
     private double vetTreatmentCost;
 
-    public InjuredAnimalRescue(int rescueID, String animalName, String species, String rescueLocation, String assignedRanger, int numberOfRescueDays, double dailyCareCost, String rescueStatus, boolean surgeryRequired, String injuryDescription, double vetTreatmentCost) {
-        super(rescueID, animalName, species, rescueLocation, assignedRanger, numberOfRescueDays, dailyCareCost, rescueStatus);
+    public InjuredAnimalRescue(int rescueID, String animalName, String species, String rescueLocation, String assignedRanger,
+                               int numberOfRescueDays, double dailyCareCost, String rescueStatus, boolean surgeryRequired, String injuryDescription, double vetTreatmentCost) {
+
+        super(rescueID, animalName, species, rescueLocation, assignedRanger, numberOfRescueDays, dailyCareCost, rescueStatus, "High");
+
         this.surgeryRequired = surgeryRequired;
         this.injuryDescription = injuryDescription;
         this.vetTreatmentCost = vetTreatmentCost;
@@ -44,5 +47,17 @@ public class InjuredAnimalRescue extends RescueCase {
 
     public void setVetTreatmentCost(double vetTreatmentCost) {
         this.vetTreatmentCost = vetTreatmentCost;
+    }
+
+    @Override
+    public String toString() {
+        return    "Species: "          + this.species
+                + "Rescue Status: "    + this.rescueStatus
+                + "Rescue Priority: "  + this.rescuePriority
+                + "Injury Description: " + this.injuryDescription
+                + "Vet Treatment Cost: " + this.vetTreatmentCost
+                + "Surgery Required: " + this.surgeryRequired
+                + "Total Cost: "       + getTotalCost()
+                ;
     }
 }

@@ -15,6 +15,7 @@ public class RescueSystem {
     }
 
     public void searchRescueCase() {
+
     }
 
     public void updateRescueCase() {

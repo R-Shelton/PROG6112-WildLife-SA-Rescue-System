@@ -4,8 +4,12 @@ public class EndangeredSpeciesRescue extends RescueCase {
     private double securityCost;
     private boolean specialistTeamRequired;
 
-    public EndangeredSpeciesRescue(int rescueID, String animalName, String species, String rescueLocation, String assignedRanger, int numberOfRescueDays, double dailyCareCost, String rescueStatus, String conservationClassification, double securityCost, boolean specialistTeamRequired) {
-        super(rescueID, animalName, species, rescueLocation, assignedRanger, numberOfRescueDays, dailyCareCost, rescueStatus);
+    public EndangeredSpeciesRescue(int rescueID, String animalName, String species, String rescueLocation, String assignedRanger,
+                                   int numberOfRescueDays, double dailyCareCost, String rescueStatus, String rescuePriority,
+                                   String conservationClassification, double securityCost, boolean specialistTeamRequired) {
+
+        super(rescueID, animalName, species, rescueLocation, assignedRanger, numberOfRescueDays, dailyCareCost, rescueStatus, "High");
+
         this.conservationClassification = conservationClassification;
         this.securityCost = securityCost;
         this.specialistTeamRequired = specialistTeamRequired;
@@ -16,7 +20,7 @@ public class EndangeredSpeciesRescue extends RescueCase {
         double total = this.dailyCareCost * this.numberOfRescueDays + securityCost;
 
         if (specialistTeamRequired) {
-            total = total + 5000 ;
+            total = total + 8000 ;
         }
 
         return total;
@@ -44,5 +48,18 @@ public class EndangeredSpeciesRescue extends RescueCase {
 
     public void setSpecialistTeamRequired(boolean specialistTeamRequired) {
         this.specialistTeamRequired = specialistTeamRequired;
+    }
+
+    @Override
+    public String toString() {
+
+        return    "Species: "         + this.species
+                + "Rescue Status: "   + this.rescueStatus
+                + "Rescue Priority: " + this.rescuePriority
+                + "Conservation Classification: " + this.conservationClassification
+                + "Security Cost: "   + this.securityCost
+                + "Specialist Team Required: "    + this.specialistTeamRequired
+                + "Total Cost: "    + getTotalCost()
+                ;
     }
 }

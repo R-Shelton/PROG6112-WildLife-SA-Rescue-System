@@ -13,4 +13,16 @@ public class RescueSystem {
     public boolean createRescue() {
         return false;
     }
+
+    public void searchRescueCase() {
+    }
+
+    public void updateRescueCase() {
+    }
+
+    public void displayAllRescueCases() {
+    }
+
+    public void displayRescueReport() {
+    }
 }

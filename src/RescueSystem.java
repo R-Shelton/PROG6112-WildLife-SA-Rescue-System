@@ -3,11 +3,6 @@ import java.util.Scanner;
 
 public class RescueSystem {
 
-    //TODO: Numeric input validation greater than 0;
-    //TODO: Add summary call to completeRescue() methods
-    //TODO: Junit tests
-    //TODO: test thoroughly
-
     private final ArrayList<RescueCase> rescueCases = new ArrayList<>();
     private final Scanner scanner;
 
@@ -207,14 +202,14 @@ public class RescueSystem {
             try {
                 int value = Integer.parseInt(scanner.nextLine().trim());
 
-                if (value >= 0) {
+                if (value > 0) {
                     return value;
                 }
             } catch (NumberFormatException e) {
                 // Not a number; fall through to the message below
             }
 
-            System.out.println("Please enter a whole number of 0 or more.");
+            System.out.println("Please enter a whole number greater than 0.");
         }
     }
 
